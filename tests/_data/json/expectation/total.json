@@ -1277,7 +1277,7 @@
                 "endline": 17,
                 "isComment": false
             },
-            "group": -7
+            "group": -5
         },
         "PackageB\\Controller\\Command": {
             "name": "PackageB\\Controller\\Command",
@@ -1307,7 +1307,7 @@
                 "endline": 41,
                 "isComment": false
             },
-            "group": -7
+            "group": -5
         },
         "PackageB\\Controller\\Query": {
             "name": "PackageB\\Controller\\Query",
@@ -1336,7 +1336,7 @@
                 "endline": 24,
                 "isComment": false
             },
-            "group": -7
+            "group": -5
         },
         "PackageB\\Entity\\Package": {
             "name": "PackageB\\Entity\\Package",
@@ -1360,7 +1360,7 @@
                 "endline": 8,
                 "isComment": false
             },
-            "group": -7
+            "group": -5
         },
         "PackageB\\Mapper\\Command": {
             "name": "PackageB\\Mapper\\Command",
@@ -1392,7 +1392,7 @@
                 "endline": 20,
                 "isComment": false
             },
-            "group": -7
+            "group": -5
         },
         "PackageB\\Mapper\\CommandInterface": {
             "name": "PackageB\\Mapper\\CommandInterface",
@@ -1418,7 +1418,7 @@
                 "endline": 18,
                 "isComment": false
             },
-            "group": -7
+            "group": -5
         },
         "PackageB\\Mapper\\EntityManagerAwareTrait": {
             "name": "PackageB\\Mapper\\EntityManagerAwareTrait",
@@ -1445,7 +1445,7 @@
                 "endline": 34,
                 "isComment": false
             },
-            "group": -7
+            "group": -5
         },
         "PackageB\\Mapper\\Query": {
             "name": "PackageB\\Mapper\\Query",
@@ -1476,7 +1476,7 @@
                 "endline": 18,
                 "isComment": false
             },
-            "group": -7
+            "group": -5
         },
         "PackageB\\Mapper\\QueryInterface": {
             "name": "PackageB\\Mapper\\QueryInterface",
@@ -1502,7 +1502,7 @@
                 "endline": 18,
                 "isComment": false
             },
-            "group": -7
+            "group": -5
         },
         "PackageB\\Service\\AbstractService": {
             "name": "PackageB\\Service\\AbstractService",
@@ -1526,7 +1526,7 @@
                 "endline": 8,
                 "isComment": false
             },
-            "group": -7
+            "group": -5
         },
         "PackageB\\Service\\Command": {
             "name": "PackageB\\Service\\Command",
@@ -1558,7 +1558,7 @@
                 "endline": 39,
                 "isComment": false
             },
-            "group": -7
+            "group": -5
         },
         "PackageB\\Service\\Message": {
             "name": "PackageB\\Service\\Message",
@@ -1584,7 +1584,7 @@
                 "endline": 13,
                 "isComment": false
             },
-            "group": -7
+            "group": -5
         },
         "PackageB\\Service\\Query": {
             "name": "PackageB\\Service\\Query",
@@ -1615,7 +1615,7 @@
                 "endline": 32,
                 "isComment": false
             },
-            "group": -7
+            "group": -5
         },
         "PackageC\\Filter\\FilterA": {
             "name": "PackageC\\Filter\\FilterA",
@@ -1644,7 +1644,7 @@
                 "endline": 11,
                 "isComment": false
             },
-            "group": -9
+            "group": -6
         },
         "PackageC\\Filter\\FilterB": {
             "name": "PackageC\\Filter\\FilterB",
@@ -1673,7 +1673,7 @@
                 "endline": 11,
                 "isComment": false
             },
-            "group": -9
+            "group": -6
         },
         "PackageC\\Filter\\FilterC": {
             "name": "PackageC\\Filter\\FilterC",
@@ -1702,7 +1702,7 @@
                 "endline": 11,
                 "isComment": false
             },
-            "group": -9
+            "group": -6
         },
         "PackageC\\Filter\\FilterD": {
             "name": "PackageC\\Filter\\FilterD",
@@ -1731,7 +1731,7 @@
                 "endline": 11,
                 "isComment": false
             },
-            "group": -9
+            "group": -6
         },
         "PackageC\\Filter\\FilterE": {
             "name": "PackageC\\Filter\\FilterE",
@@ -1760,7 +1760,7 @@
                 "endline": 11,
                 "isComment": false
             },
-            "group": -9
+            "group": -6
         },
         "PackageC\\Filter\\FilterInterface": {
             "name": "PackageC\\Filter\\FilterInterface",
@@ -1784,7 +1784,7 @@
                 "endline": 8,
                 "isComment": false
             },
-            "group": -9
+            "group": -6
         },
         "PackageC\\Service\\Message": {
             "name": "PackageC\\Service\\Message",
@@ -1810,7 +1810,7 @@
                 "endline": 13,
                 "isComment": false
             },
-            "group": -9
+            "group": -6
         },
         "Zend\\Http\\Request": {
             "name": "Zend\\Http\\Request",
@@ -1831,21 +1831,21 @@
             "usedByCount": 2,
             "adt": [],
             "location": null,
-            "group": -8
+            "group": -4
         },
         "array_map": {
             "name": "array_map",
             "usedByCount": 2,
             "adt": [],
             "location": null,
-            "group": -5
+            "group": -4
         },
         "intval": {
             "name": "intval",
             "usedByCount": 2,
             "adt": [],
             "location": null,
-            "group": -6
+            "group": -4
         }
     },
     "cycles": [
@@ -1867,12 +1867,9 @@
         "-1": "PackageA",
         "-2": "Zend",
         "-3": "Doctrine",
-        "-4": "DomainException",
-        "-5": "array_map",
-        "-6": "intval",
-        "-7": "PackageB",
-        "-8": "array_key_exists",
-        "-9": "PackageC"
+        "-4": "\\",
+        "-5": "PackageB",
+        "-6": "PackageC"
     },
     "log": [],
     "label": "PhpDependencyAnalysis by Marco Muths"

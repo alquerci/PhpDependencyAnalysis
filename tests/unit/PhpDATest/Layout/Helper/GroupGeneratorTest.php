@@ -72,9 +72,9 @@ class GroupGeneratorTest extends \PHPUnit_Framework_TestCase
         $this->namespace->parts = array('Baz');
 
         self::assertSame(-3, $this->fixture->getIdFor($this->namespace));
-        self::assertSame(array(-1 => 'Foo\\Bar', -2 => 'Baz\\Foo', -3 => 'SPL'), $this->fixture->getGroups());
+        self::assertSame(array(-1 => 'Foo\\Bar', -2 => 'Baz\\Foo', -3 => '\\'), $this->fixture->getGroups());
 
         self::assertSame(-3, $this->fixture->getIdFor($this->namespace));
-        self::assertSame(array(-1 => 'Foo\\Bar', -2 => 'Baz\\Foo', -3 => 'SPL'), $this->fixture->getGroups());
+        self::assertSame(array(-1 => 'Foo\\Bar', -2 => 'Baz\\Foo', -3 => '\\'), $this->fixture->getGroups());
     }
 }

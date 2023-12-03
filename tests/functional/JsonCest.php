@@ -48,14 +48,14 @@ class JsonCest
                 $expected = $this->readResultFrom($this->expectationFolder . $jsonFilename);
                 $result = $this->readResultFrom($this->outputFolder . $jsonFilename);
 
-                $tester->assertNotEmpty($expected, $file->getBasename());
-                $tester->assertNotEmpty($result, $file->getBasename());
-                $tester->assertEquals($expected, $result, $file->getBasename());
+                $tester->assertNotEmpty($expected, $file->getBasename(), $file->getBasename('yml'));
+                $tester->assertNotEmpty($result, $file->getBasename(), $file->getBasename('yml'));
+                $tester->assertEquals($expected, $result, $file->getBasename(), $file->getBasename('yml'));
 
                 if (in_array($file->getBasename('.yml'), $this->resultsWithViolations)) {
-                    $tester->assertSame(1, $return);
+                    $tester->assertSame(1, $return, $file->getBasename('yml'));
                 } else {
-                    $tester->assertSame(0, $return);
+                    $tester->assertSame(0, $return, $file->getBasename('yml'));
                 }
             }
         }
