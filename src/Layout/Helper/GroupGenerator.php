@@ -76,6 +76,10 @@ class GroupGenerator
      */
     private function generateGroupNameBy(array $namespaceParts)
     {
+        if (1 === count($namespaceParts)) {
+            return 'SPL';
+        }
+
         return implode('\\', array_slice($namespaceParts, 0, $this->groupLength));
     }
 
