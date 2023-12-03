@@ -29,7 +29,7 @@ abstract class AbstractLayout implements LayoutInterface
 {
     /** @var array */
     private $graph = [
-        'rankdir'  => 'LR',
+        'rankdir'  => 'BT',
         'ranksep'  => 1,
         'nodesep'  => 0.1,
         'fontsize' => 8,
