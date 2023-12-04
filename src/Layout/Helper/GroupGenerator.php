@@ -76,11 +76,13 @@ class GroupGenerator
      */
     private function generateGroupNameBy(array $namespaceParts)
     {
-        if (1 === count($namespaceParts)) {
+        if (1 === \count($namespaceParts)) {
             return '\\';
         }
 
-        return implode('\\', array_slice($namespaceParts, 0, $this->groupLength));
+        $length = min($this->groupLength, \count($namespaceParts) - 1);
+
+        return implode('\\', array_slice($namespaceParts, 0, $length));
     }
 
     /**

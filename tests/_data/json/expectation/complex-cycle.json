@@ -198,7 +198,7 @@
                 "endline": 11,
                 "isComment": false
             },
-            "group": -3
+            "group": -1
         },
         "PackageC\\Filter\\FilterC": {
             "name": "PackageC\\Filter\\FilterC",
@@ -227,7 +227,7 @@
                 "endline": 11,
                 "isComment": false
             },
-            "group": -4
+            "group": -1
         },
         "PackageC\\Filter\\FilterD": {
             "name": "PackageC\\Filter\\FilterD",
@@ -256,7 +256,7 @@
                 "endline": 11,
                 "isComment": false
             },
-            "group": -5
+            "group": -1
         },
         "PackageC\\Filter\\FilterE": {
             "name": "PackageC\\Filter\\FilterE",
@@ -285,7 +285,7 @@
                 "endline": 11,
                 "isComment": false
             },
-            "group": -6
+            "group": -1
         },
         "PackageC\\Filter\\FilterInterface": {
             "name": "PackageC\\Filter\\FilterInterface",
@@ -309,7 +309,7 @@
                 "endline": 8,
                 "isComment": false
             },
-            "group": -2
+            "group": -1
         }
     },
     "cycles": [
@@ -322,12 +322,7 @@
         ]
     ],
     "groups": {
-        "-1": "PackageC\\Filter\\FilterA",
-        "-2": "PackageC\\Filter\\FilterInterface",
-        "-3": "PackageC\\Filter\\FilterB",
-        "-4": "PackageC\\Filter\\FilterC",
-        "-5": "PackageC\\Filter\\FilterD",
-        "-6": "PackageC\\Filter\\FilterE"
+        "-1": "PackageC\\Filter"
     },
     "log": [],
     "label": "PhpDependencyAnalysis by Marco Muths"

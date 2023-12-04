@@ -64,17 +64,17 @@ class GroupGeneratorTest extends \PHPUnit_Framework_TestCase
         $this->namespace->parts = array('Baz', 'Foo');
 
         self::assertSame(-2, $this->fixture->getIdFor($this->namespace));
-        self::assertSame(array(-1 => 'Foo\\Bar', -2 => 'Baz\\Foo'), $this->fixture->getGroups());
+        self::assertSame(array(-1 => 'Foo\\Bar', -2 => 'Baz'), $this->fixture->getGroups());
 
         self::assertSame(-2, $this->fixture->getIdFor($this->namespace));
-        self::assertSame(array(-1 => 'Foo\\Bar', -2 => 'Baz\\Foo'), $this->fixture->getGroups());
+        self::assertSame(array(-1 => 'Foo\\Bar', -2 => 'Baz'), $this->fixture->getGroups());
 
         $this->namespace->parts = array('Baz');
 
         self::assertSame(-3, $this->fixture->getIdFor($this->namespace));
-        self::assertSame(array(-1 => 'Foo\\Bar', -2 => 'Baz\\Foo', -3 => '\\'), $this->fixture->getGroups());
+        self::assertSame(array(-1 => 'Foo\\Bar', -2 => 'Baz', -3 => '\\'), $this->fixture->getGroups());
 
         self::assertSame(-3, $this->fixture->getIdFor($this->namespace));
-        self::assertSame(array(-1 => 'Foo\\Bar', -2 => 'Baz\\Foo', -3 => '\\'), $this->fixture->getGroups());
+        self::assertSame(array(-1 => 'Foo\\Bar', -2 => 'Baz', -3 => '\\'), $this->fixture->getGroups());
     }
 }
