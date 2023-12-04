@@ -41,6 +41,7 @@ abstract class AbstractLayout implements LayoutInterface
         'fontcolor' => '#000033',
         'fontsize'  => 14,
         'labeljust' => 'l',
+        'labelloc' => 'b',
         'color'     => '#000033',
         'fillcolor' => '#CCCCFF',
     ];
