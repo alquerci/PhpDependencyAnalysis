@@ -77,4 +77,23 @@ class GroupGeneratorTest extends \PHPUnit_Framework_TestCase
         self::assertSame(-3, $this->fixture->getIdFor($this->namespace));
         self::assertSame(array(-1 => 'Foo\\Bar', -2 => 'Baz', -3 => '\\'), $this->fixture->getGroups());
     }
+
+    /**
+     * @dataProvider provideIdRetrievalWithNegativeGroupLengthData
+     */
+    public function testIdRetrievalWithNegativeGroupLength($givenGroupLength, $expectedGroup): void
+    {
+        $this->fixture->setGroupLength($givenGroupLength);
+        self::assertSame(array(), $this->fixture->getGroups());
+
+        self::assertSame(-1, $this->fixture->getIdFor($this->namespace));
+
+        self::assertSame(array(-1 => $expectedGroup), $this->fixture->getGroups());
+    }
+
+    public static function provideIdRetrievalWithNegativeGroupLengthData()
+    {
+        yield [-1, 'Foo\\Bar'];
+        yield [-2, 'Foo'];
+    }
 }

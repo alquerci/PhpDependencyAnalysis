@@ -57,7 +57,7 @@ class GroupGenerator
      */
     public function getIdFor(Name $name)
     {
-        if ($this->groupLength < 1) {
+        if (0 === $this->groupLength) {
             return null;
         }
 
@@ -81,6 +81,10 @@ class GroupGenerator
         }
 
         $length = min($this->groupLength, \count($namespaceParts) - 1);
+
+        if (0 > $this->groupLength) {
+            $length = $this->groupLength;
+        }
 
         return implode('\\', array_slice($namespaceParts, 0, $length));
     }
