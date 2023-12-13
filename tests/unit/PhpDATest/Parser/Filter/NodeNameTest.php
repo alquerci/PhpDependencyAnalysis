@@ -158,37 +158,75 @@ class NodeNameTest extends \PHPUnit_Framework_TestCase
         self::assertNamespaceFilter();
     }
 
-    public function testSlicingWithOffset()
+    /**
+     * @dataProvider provideSlicingWithOffsetData
+     */
+    public function testSlicingWithOffset_dp($givenSliceOffset, $expectedSlice): void
     {
-        $this->fixture->setOptions(array('sliceOffset' => 2));
+        $string = 'Foo\\Bar\\Baz';
+
+        $this->fixture->setOptions(array('sliceOffset' => $givenSliceOffset));
+
+        $this->expected = $expectedSlice;
+        $this->entity->parts = explode('\\', $string);
+        $this->entity->shouldReceive('toString')->andReturn($string);
+
+        self::assertNamespaceFilter();
+    }
+
+    public static function provideSlicingWithOffsetData()
+    {
+        yield [0, 'Foo\\Bar\\Baz'];
+        yield [2, 'Baz'];
+    }
+
+    /**
+     * @dataProvider provideSlicingWithLengthData
+     */
+    public function testSlicingWithLength($givenSliceLength, $expectedSlice): void
+    {
+        $string = 'Foo\\Bar\\Baz';
+
+        $this->fixture->setOptions(array('sliceLength' => $givenSliceLength));
+
+        $this->expected = $expectedSlice;
+        $this->entity->parts = explode('\\', $string);
+        $this->entity->shouldReceive('toString')->andReturn($string);
+
+        self::assertNamespaceFilter();
+    }
+
+    public static function provideSlicingWithLengthData()
+    {
+        yield [0, 'Foo\\Bar\\Baz'];
+        yield [2, 'Foo\\Bar'];
+    }
+
+    /**
+     * @dataProvider provideSlicingWithOffsetAndLengthData
+     */
+    public function testSlicingWithOffsetAndLength($givenOptions, $expectedSlice): void
+    {
+
+        $this->fixture->setOptions($givenOptions);
 
         $string = 'Foo\Bar\Baz';
-        $this->expected = 'Baz';
+
+        $this->expected = $expectedSlice;
         $this->entity->parts = explode('\\', $string);
         $this->entity->shouldReceive('toString')->andReturn($string);
         self::assertNamespaceFilter();
     }
 
-    public function testSlicingWithLength()
+    public static function provideSlicingWithOffsetAndLengthData()
     {
-        $this->fixture->setOptions(array('sliceLength' => 2));
+        $givenOptions = array('sliceLength' => 2, 'sliceOffset' => 1);
+        $expectedSlice = 'Bar\\Baz';
+        yield [$givenOptions, $expectedSlice];
 
-        $string = 'Foo\Bar\Baz';
-        $this->expected = 'Foo\Bar';
-        $this->entity->parts = explode('\\', $string);
-        $this->entity->shouldReceive('toString')->andReturn($string);
-        self::assertNamespaceFilter();
-    }
-
-    public function testSlicingWithOffsetAndLength()
-    {
-        $this->fixture->setOptions(array('sliceLength' => 2, 'sliceOffset' => 1));
-
-        $string = 'Foo\Bar\Baz';
-        $this->expected = 'Bar\Baz';
-        $this->entity->parts = explode('\\', $string);
-        $this->entity->shouldReceive('toString')->andReturn($string);
-        self::assertNamespaceFilter();
+        $givenOptions = array('sliceLength' => 0, 'sliceOffset' => 0);
+        $expectedSlice = 'Foo\\Bar\\Baz';
+        yield [$givenOptions, $expectedSlice];
     }
 
     public function testSlicingToNull()

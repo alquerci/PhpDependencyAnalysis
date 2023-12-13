@@ -34,11 +34,11 @@ class NodeName implements NodeNameInterface
     /** @var array */
     private $ignoredNamespaces = ['self', 'parent', 'static', 'null', 'true', 'false'];
 
-    /** @var int|null */
-    private $sliceOffset;
+    /** @var int */
+    private $sliceOffset = 0;
 
-    /** @var int|null */
-    private $sliceLength;
+    /** @var int */
+    private $sliceLength = 0;
 
     /** @var int */
     private $minDepth = 0;
@@ -141,14 +141,14 @@ class NodeName implements NodeNameInterface
      */
     private function slice(array $nameParts)
     {
-        if (is_null($this->sliceOffset) && is_null($this->sliceLength)) {
+        if (0 === $this->sliceOffset && 0 === $this->sliceLength) {
             return $nameParts;
         }
 
-        if (is_null($this->sliceLength)) {
-            return array_slice($nameParts, (int) $this->sliceOffset);
+        if (0 === $this->sliceLength) {
+            return array_slice($nameParts, $this->sliceOffset);
         }
 
-        return array_slice($nameParts, (int) $this->sliceOffset, (int) $this->sliceLength);
+        return array_slice($nameParts, $this->sliceOffset, $this->sliceLength);
     }
 }
