@@ -1,0 +1,36 @@
+digraph {
+  rankdir="BT";
+  newrank="false";
+  fixedsize="false";
+  ranksep=1.5; nodesep=.3;
+  compound="true";
+  concentrate="true";
+  splines="polyline";
+  TBbalance="min";
+
+  subgraph cluster_low_component {
+    label="Low Level Component";
+    rank="source";
+    low_a; low_b;
+  };
+  subgraph cluster_middle_component {
+    label="Middle Level Component";
+    rank="source";
+    middle_a; middle_b;
+  };
+  subgraph cluster_high_component {
+    label="High Level Component";
+    rank="source";
+    high_a; high_b; high_c; high_d; high_b; high_f; high_e; high_g;
+  };
+
+  low_a -> middle_a;
+  middle_a -> high_c;
+  middle_b -> high_a;
+  high_a -> high_b;
+  high_a -> high_c;
+  high_c -> high_d;
+  high_c -> high_e;
+  high_e -> high_f;
+  high_e -> high_g;
+}
