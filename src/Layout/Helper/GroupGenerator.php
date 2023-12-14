@@ -51,6 +51,15 @@ class GroupGenerator
         return $this->groups;
     }
 
+    public function getGroupItemNameFor(Name $name): Name
+    {
+        if (-1 === $this->groupLength) {
+            return new Name($this->generateGroupNameBy($name->parts));
+        }
+
+        return $name;
+    }
+
     /**
      * @param Name $name
      * @return int|null

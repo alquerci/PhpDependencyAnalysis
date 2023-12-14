@@ -253,15 +253,24 @@ class Builder implements BuilderInterface
     private function createVertexBy(Name $name)
     {
         if ($groupId = $this->groupGenerator->getIdFor($name)) {
-            $vertex = $this->getGraph()->createVertex($name->getLast(), true);
+            $groupItemName = $this->groupGenerator->getGroupItemNameFor($name);
+
+            $vertex = $this->makeVertexWithName($groupItemName);
 
             $vertex->setGroup($groupId);
             $vertex->setAttribute('graphviz.group', $groupId);
         } else {
-            $vertex = $this->getGraph()->createVertex($name->toString(), true);
+            $vertex = $this->makeVertexWithName($name);
         }
 
         $this->bindLayoutTo($vertex, $this->layout->getVertex());
+
+        return $vertex;
+    }
+
+    private function makeVertexWithName($groupItemName)
+    {
+        $vertex = $this->getGraph()->createVertex($groupItemName->toString(), true);
 
         return $vertex;
     }

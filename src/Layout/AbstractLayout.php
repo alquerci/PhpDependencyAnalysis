@@ -30,18 +30,25 @@ abstract class AbstractLayout implements LayoutInterface
     /** @var array */
     private $graph = [
         'rankdir'  => 'BT',
-        'ranksep'  => 1,
-        'nodesep'  => 0.1,
-        'fontsize' => 8,
+        'fontsize' => 14,
+        'fixedsize' => 'false',
+        'newrank' => 'true',
+        'compound' => 'true',
+        'ranksep' => 1.5,
+        'nodesep' => .35,
+        'concentrate' => 'true',
+        'splines' => 'polyline',
+        'TBbalance' => 'max',
     ];
 
     /** @var array */
     private $group = [
+        'rank'      => 'source',
         'style'     => 'rounded,filled',
         'fontcolor' => '#000033',
-        'fontsize'  => 14,
+        'fontsize'  => 16,
         'labeljust' => 'l',
-        'labelloc' => 'b',
+        'labelloc'  => 'b',
         'color'     => '#000033',
         'fillcolor' => '#CCCCFF',
     ];
@@ -52,7 +59,7 @@ abstract class AbstractLayout implements LayoutInterface
         'style'     => 'filled,rounded',
         'shape'     => 'box',
         'fontcolor' => '#000033',
-        'fontsize'  => 10,
+        'fontsize'  => 16,
     ];
 
     /** @var array */
@@ -67,25 +74,25 @@ abstract class AbstractLayout implements LayoutInterface
 
     /** @var array */
     private $edge = [
-        'arrowsize' => 0.6,
-        'fontcolor' => '#999999',
-        'fontsize'  => 8,
-        'color'     => '#999999',
-        'weight'    => 1.2,
+        'arrowsize' => 1.5,
+        'arrowhead' => 'vee',
+        'fontcolor' => '#777777',
+        'fontsize'  => 14,
+        'color'     => '#777777',
     ];
 
     /** @var array */
     private $edgeInvalid = [
         'color'     => '#FF0000',
         'style'     => 'bold',
-        'arrowsize' => 0.8,
+        'arrowsize' => 2,
     ];
 
     /** @var array */
     private $edgeCycle = [
         'color'     => '#FF0099',
         'style'     => 'bold',
-        'arrowsize' => 0.8,
+        'arrowsize' => 2,
     ];
 
     /** @var array */
